@@ -8,39 +8,39 @@ namespace ODataTest.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentsController : ControllerBase
+    public class AngelsController : ControllerBase
     {
         [HttpGet]
         [EnableQuery]
-        public ActionResult<List<Student>> GetAllStudents()
+        public ActionResult<List<Angel>> GetAllStudents()
         {
-            return Ok(new List<Student>
+            return Ok(new List<Angel>
             { 
-                new Student
+                new Angel
                 {
                     Id = Guid.NewGuid(),
                     Name = "Paul Ruddock",
                     Grade = 1
                 },
-                new Student
+                new Angel
                 {
                     Id = Guid.NewGuid(),
                     Name = "Tim Stone",
                     Grade = 2
                 },
-                new Student
+                new Angel
                 {
                     Id = Guid.NewGuid(),
                     Name = "Stephen Blair",
                     Grade = 3
                 },
-                new Student
+                new Angel
                 {
                     Id = Guid.NewGuid(),
                     Name = "Chris James",
                     Grade = 1
                 },
-                 new Student
+                 new Angel
                 {
                     Id = Guid.NewGuid(),
                     Name = "Steven Kearns",

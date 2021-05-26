@@ -74,7 +74,7 @@ namespace ODataTest
         {
             var builder = new ODataConventionModelBuilder();
           //  builder.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
-            builder.EntitySet<Student>("Student");
+            builder.EntitySet<Angel>("Student");
             return builder.GetEdmModel();
         }
 

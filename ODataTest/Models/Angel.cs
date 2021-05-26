@@ -2,7 +2,7 @@
 
 namespace ODataTest.Models
 {
-    public class Student
+    public class Angel
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
