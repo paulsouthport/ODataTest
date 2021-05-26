@@ -34,6 +34,9 @@ namespace ODataTest
         {
 
             services.AddControllers();
+            services.AddControllers(mvcOptions =>
+                mvcOptions.EnableEndpointRouting = false)
+                .AddNewtonsoftJson();
             services.AddOData();
             services.AddSwaggerGen(c =>
             {
@@ -61,8 +64,8 @@ namespace ODataTest
             {
                 endpoints.MapControllers();
                 endpoints.EnableDependencyInjection();
-                endpoints.Select().Filter().Expand();
-                endpoints.MapODataRoute(routeName: "odata", routePrefix: "odata", model: GetEdmModel());
+                endpoints.Select().Filter().Expand().OrderBy();
+                endpoints.MapODataRoute(routeName: "api", routePrefix: "api", model: GetEdmModel());
               
             });
         }
@@ -70,6 +73,7 @@ namespace ODataTest
         IEdmModel GetEdmModel()
         {
             var builder = new ODataConventionModelBuilder();
+          //  builder.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
             builder.EntitySet<Student>("Student");
             return builder.GetEdmModel();
         }

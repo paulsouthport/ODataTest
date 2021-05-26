@@ -33,6 +33,12 @@ namespace ODataTest.Controllers
                     Id = Guid.NewGuid(),
                     Name = "Stephen Blair",
                     Grade = 3
+                },
+                new Student
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Chris James",
+                    Grade = 1
                 }
             });
         }
